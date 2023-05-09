@@ -20,19 +20,22 @@ public class question3 {
 
             switch (option) {
                 case 1:
-                    String namePlayer;
+                    String nameUser;
+                    int rights = 0, wrongs = 0;
 
                     do {
                         scan.nextLine();
-                        System.out.print("Nome do jogador: ");
-                        namePlayer = scan.nextLine();
+                        System.out.print("\nNome do usuário: ");
+                        nameUser = scan.nextLine();
 
-                        if (namePlayer == null || namePlayer == "") {
+                        if (nameUser == null || nameUser == "") {
                             System.out.println("\nPor favor, digite algum nome!\n");
                         }
-                    } while (namePlayer == null || namePlayer == "");
+                    } while (nameUser == null || nameUser == "");
 
+                    System.out.println("\nVamos começar o quiz então " + nameUser + "!");
 
+                    showInfosPlayer(rights, wrongs, nameUser);
 
                     break;
                 case 2:
@@ -44,5 +47,13 @@ public class question3 {
         } while (option != 2);
 
         scan.close();
+    }
+
+    public static void showInfosPlayer(int rights, int wrongs, String nameUser) {
+        System.out.println("\n****************************************************************\n");
+        System.out.println("\tUsuário: \t" + nameUser);
+        System.out.println("\tAcertos: \t" + rights);
+        System.out.println("\tErros: \t\t" + wrongs);
+        System.out.println("\n****************************************************************\n");
     }
 }
