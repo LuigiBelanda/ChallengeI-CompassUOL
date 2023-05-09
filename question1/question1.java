@@ -61,13 +61,7 @@ public class question1 {
                             double salaryEmployee = scan.nextInt();
                             salaryOfEmployees[i] = salaryEmployee;
 
-                            if (salaryEmployee <= 1000) {
-                                bonusOrDiscountOfEmployees[i] = (salaryEmployee * 0.2);
-                            } else if (salaryEmployee > 1000 && salaryEmployee <= 2000) {
-                                bonusOrDiscountOfEmployees[i] = (salaryOfEmployees[i] * 0.10);
-                            } else {
-                                bonusOrDiscountOfEmployees[i] = (salaryEmployee * 0.10);
-                            }
+                            bonusOrDiscountOfEmployees[i] = calculateBonusOrDiscount(salaryEmployee);
                         }
 
                         showInfoEmployees(numberOfEmployees, salaryOfEmployees, nameOfEmployees, bonusOrDiscountOfEmployees);
@@ -80,6 +74,20 @@ public class question1 {
                     System.out.println("\n****************** \nOpção inválida!!!\n******************");
             }
         } while (option != 2);
+    }
+
+    public static double calculateBonusOrDiscount(double salaryEmployee) {
+        double totalBonusOrDiscount;
+
+        if (salaryEmployee <= 1000) {
+            totalBonusOrDiscount = (salaryEmployee * 0.2);
+        } else if (salaryEmployee > 1000 && salaryEmployee <= 2000) {
+            totalBonusOrDiscount = (salaryEmployee * 0.10);
+        } else {
+            totalBonusOrDiscount = (salaryEmployee * 0.10);
+        }
+
+        return totalBonusOrDiscount;
     }
 
     public static void showInfoEmployees(int numberOfEmployees, double[] salaryOfEmployees, String nameOfEmployees[], double[] bonusOrDiscountOfEmployees) {
