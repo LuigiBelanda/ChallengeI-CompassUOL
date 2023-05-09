@@ -8,7 +8,6 @@ public class question1 {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("\n####### QUESTION 1 #######");
-        System.out.println("Java program that aims to validate whether a given employee is entitled to a bonus.");
 
         int option;
 
@@ -50,11 +49,21 @@ public class question1 {
                         double[] bonusOrDiscountOfEmployees = new double[numberOfEmployees];
 
                         for (int i = 0; i < numberOfEmployees; i++) {
+                            String nameEmployee;
+
                             System.out.println("\nFuncionário nº " + (i + 1));
 
-                            System.out.print("Nome do funcionário: ");
-                            scan.nextLine();
-                            String nameEmployee = scan.nextLine();
+                            do {
+                                scan.nextLine();
+                                System.out.print("Nome do funcionário: ");
+                                nameEmployee = scan.nextLine();
+
+                                if (nameEmployee == null || nameEmployee == "") {
+                                    System.out.println("\nPor favor, digite algum nome!\n");
+                                }
+                                
+                            } while (nameEmployee == null || nameEmployee == "");
+                            
                             nameOfEmployees[i] = nameEmployee;
 
                             System.out.print("Salário do funcionário: ");
