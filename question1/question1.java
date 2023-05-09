@@ -58,7 +58,7 @@ public class question1 {
                             nameOfEmployees[i] = nameEmployee;
 
                             System.out.print("Salário do funcionário: ");
-                            double salaryEmployee = scan.nextInt();
+                            double salaryEmployee = scan.nextDouble();
                             salaryOfEmployees[i] = salaryEmployee;
 
                             bonusOrDiscountOfEmployees[i] = calculateBonusOrDiscount(salaryEmployee);
@@ -76,6 +76,14 @@ public class question1 {
         } while (option != 2);
     }
 
+    /**
+     * 
+     * Function name: calculateBonusOrDiscount
+     * 
+     * @param   salaryEmployee
+     * @return  totalBonusOrDiscount (double)
+     * 
+     */
     public static double calculateBonusOrDiscount(double salaryEmployee) {
         double totalBonusOrDiscount;
 
@@ -90,14 +98,36 @@ public class question1 {
         return totalBonusOrDiscount;
     }
 
+    /**
+     * 
+     * Function name: showInfoEmployees
+     * 
+     * @param numberOfEmployees
+     * @param salaryOfEmployees
+     * @param nameOfEmployees
+     * @param bonusOrDiscountOfEmployees
+     */
     public static void showInfoEmployees(int numberOfEmployees, double[] salaryOfEmployees, String nameOfEmployees[], double[] bonusOrDiscountOfEmployees) {
+        System.out.println("\n\n\n****************************************************************\n");
+        System.out.println("Resultado final dos dados cadastrados dos funcionários");
+        System.out.println("E o salário final de cada um!");
+        System.out.println("\n****************************************************************\n");
+        
         for (int i = 0; i < numberOfEmployees ; i++) {
-            System.out.println("\nFuncionário nº " + (i+1));
+            System.out.println("\n\nFuncionário nº " + (i+1));
     
             System.out.println("Nome do funcionário: " + nameOfEmployees[i]);
-            System.out.println("Salário do funcionário: " + salaryOfEmployees[i]);
-            System.out.println("Bonus / Desconto: " + bonusOrDiscountOfEmployees[i]);
-            System.out.println("Salário liquído: " + (salaryOfEmployees[i] + bonusOrDiscountOfEmployees[i]));
+            System.out.printf("Salário do funcionário: R$ %.2f", salaryOfEmployees[i]);
+
+            if (salaryOfEmployees[i] > 2000) {
+                System.out.printf("\nDesconto: R$ %.2f", bonusOrDiscountOfEmployees[i]);
+                System.out.printf("\nSalário liquido: R$ %.2f", (salaryOfEmployees[i] - bonusOrDiscountOfEmployees[i]));
+            } else {
+                System.out.printf("\nBonus: R$ %.2f", (bonusOrDiscountOfEmployees[i]));
+                System.out.printf("\nSalário liquido: R$ %.2f", (salaryOfEmployees[i] + bonusOrDiscountOfEmployees[i]));
+            }            
         } 
+
+        System.out.println("\n****************************************************************\n");
     }
 }
