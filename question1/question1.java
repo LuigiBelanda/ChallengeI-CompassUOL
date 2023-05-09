@@ -74,6 +74,8 @@ public class question1 {
                     System.out.println("\n****************** \nOpção inválida!!!\n******************");
             }
         } while (option != 2);
+
+        scan.close();
     }
 
     /**
@@ -111,7 +113,7 @@ public class question1 {
         System.out.println("\n\n\n****************************************************************\n");
         System.out.println("Resultado final dos dados cadastrados dos funcionários");
         System.out.println("E o salário final de cada um!");
-        System.out.println("\n****************************************************************\n");
+        System.out.println("\n****************************************************************");
         
         for (int i = 0; i < numberOfEmployees ; i++) {
             System.out.println("\n\nFuncionário nº " + (i+1));
@@ -128,6 +130,6 @@ public class question1 {
             }            
         } 
 
-        System.out.println("\n****************************************************************\n");
+        System.out.println("\n\n\n****************************************************************\n");
     }
 }
