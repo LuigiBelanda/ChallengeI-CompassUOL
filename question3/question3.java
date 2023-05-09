@@ -20,7 +20,20 @@ public class question3 {
 
             switch (option) {
                 case 1:
-                    System.out.println("opção 1");
+                    String namePlayer;
+
+                    do {
+                        scan.nextLine();
+                        System.out.print("Nome do jogador: ");
+                        namePlayer = scan.nextLine();
+
+                        if (namePlayer == null || namePlayer == "") {
+                            System.out.println("\nPor favor, digite algum nome!\n");
+                        }
+                    } while (namePlayer == null || namePlayer == "");
+
+
+
                     break;
                 case 2:
                     System.out.println("\nSaindo do programa...");
