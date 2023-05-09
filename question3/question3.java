@@ -23,13 +23,17 @@ public class question3 {
                     String nameUser;
                     int rights = 0, wrongs = 0;
 
+                    // Perguntas e respostas
+                    // [i][0] = Pergunta
+                    // [i][1] = Resposta
                     String[][] arrayOfQuestionsAndAnswers = {
-                        { "Questão 1 - AA", "V" },
-                        { "Questão 1 - BB", "FLW" },
-                        { "Questão 1 - CC", "F" },
-                        { "Questão 1 - DD", "V" },
+                        { "Quanto é 2+2? (Ex de resposta: 2)", "4" },
+                        { "Java é uma linguagem de programação? (Ex de resposta: F (Falso) ou V (verdade))", "V" },
+                        { "Quanto é 3*4? (Ex de resposta: 10)", "12" },
+                        { "MongoDB é um Banco de Dados NoSQL? (Ex de resposta: F (Falso) ou V (verdade))", "V" },
                     };
 
+                    // Laço que irá se repetir até que o usuário digite um nome
                     do {
                         scan.nextLine();
                         System.out.print("\nNome do usuário: ");
@@ -42,12 +46,14 @@ public class question3 {
 
                     System.out.println("\nVamos começar o quiz então " + nameUser + "!");
 
+                    // For que irá percorrer todas as perguntas
                     for (int i = 0; i < arrayOfQuestionsAndAnswers.length; i++) {
                         String resposta;
 
                         System.out.println("\nQuestão " + (i + 1));
                         System.out.println(arrayOfQuestionsAndAnswers[i][0]);
 
+                        // Laço que irá se repetir até o usuário digitar uma resposta
                         do {
                             System.out.printf("Resposta - Questão %d: ", i + 1);
                             resposta = scan.nextLine();
@@ -60,6 +66,7 @@ public class question3 {
                             }
                         } while (resposta == null || resposta == "");
 
+                        // Local onde vemos se a resposta digitada está certa ou não
                         if (resposta.equals(arrayOfQuestionsAndAnswers[i][1])) {
                             System.out.println("\n****************************************************************\n");
                             System.out.println("\t\tVOCÊ ACERTOU! +1 em acertos");
@@ -72,14 +79,13 @@ public class question3 {
                             wrongs++;
                         }
 
-                        showInfosPlayer(rights, wrongs, nameUser);
+                        showInfosUser(rights, wrongs, nameUser);
                     }
 
                     System.out.println("\n\n\n\n\n###################################################\n");
                     System.out.println("\t\tRESULTADO FINAL!");
-                    showInfosPlayer(rights, wrongs, nameUser);
+                    showInfosUser(rights, wrongs, nameUser);
                     System.out.println("\n###################################################\n\n");
-
                     break;
                 case 2:
                     System.out.println("\nSaindo do programa...");
@@ -92,7 +98,15 @@ public class question3 {
         scan.close();
     }
 
-    public static void showInfosPlayer(int rights, int wrongs, String nameUser) {
+    /**
+     * 
+     * Function name: showInfosUser
+     * 
+     * @param rights
+     * @param wrongs
+     * @param nameUser
+     */
+    public static void showInfosUser(int rights, int wrongs, String nameUser) {
         System.out.println("\n\t\tUsuário: \t" + nameUser);
         System.out.println("\t\tAcertos: \t" + rights);
         System.out.println("\t\tErros: \t\t" + wrongs);
