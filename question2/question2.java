@@ -9,10 +9,19 @@ public class question2 {
 
         System.out.println("Digite a mensagem para saber o sentimento que ela expressa: \n");
         System.out.println("Utilize os caracteres :-) ou :-( \n");
-        String read = scanner.nextLine();
+        String message = scanner.nextLine();
 
-        System.out.println(read);
+        System.out.println(message);
+
+        message = sanitizeString(message);
+
+        System.out.println(message);
 
         scanner.close();
+    }
+
+    public static String sanitizeString(String message) {
+        message = message.trim();
+        return message;
     }
 }
