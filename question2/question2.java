@@ -78,10 +78,10 @@ public class question2 {
             System.out.println("\nTemos mais carinhas felizes do que tristes");
             System.out.println("Resultado: Fun!");
         } else if (upset > fun) {
-            System.out.println("\nTemos mais carinhas trsites do que felizes");
+            System.out.println("\nTemos mais carinhas tristes do que felizes");
             System.out.println("Resultado: Upset!");
         } else {
-            System.out.println("\nO número de carinhas felizes e tristes é igual");
+            System.out.println("\nO número de carinhas felizes e tristes é igual ou nem tinha na mensagem carinhas!");
             System.out.println("Resultado: Neutral!");
         }
     }
