@@ -1,6 +1,8 @@
 -- ETAPA 1: CREATE DATABASE
 CREATE DATABASE question4
 
+
+
 -- ETAPA 2: CREATE TABLES
 -- ETAPA 2.1: CREATE TABLE Address
 CREATE TABLE Address (
@@ -30,11 +32,10 @@ CREATE TABLE Person (
 	CHECK (age > 0)
 );
 
--- ETAPA 3: INSERT data
--- ETAPA 3.1: INSERT data in table Address
-INSERT INTO Address (zip_code, address, complement, neighborhood, city, state, country) VALUES 
-	('{12345-67}', '{Rua das Flores, 123}', '{Apto. 101}', '{Centro}', '{São Paulo}', '{SP}', '{Brasil}')
 
--- ETAPA 3.2: INSERT data in table Person
-INSERT INTO Person (name, age, phone, height, email, CPF, date_of_birthday, id_address) VALUES
-	('{João Silva}', 25, '{(11) 1234-5678}', 1.75, '{joao.silva@gmail.com}', '{123.456.789-00}', '1998-05-10', 1)
+
+-- ETAPA 3: question4_insert.sql
+
+
+
+-- ETAPA 4: question4_tests.sql
