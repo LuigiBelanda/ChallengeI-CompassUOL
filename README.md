@@ -13,4 +13,4 @@ Cada pasta `(question1, question2 etc)` é relacionada a uma questão do desafio
 
 Todos os código em Java foram feitos pelo VS Code, o script SQL foi testado no PgAdmin e o script do MongoDB foi testado no Mongosh / MongoShell e no próprio Studio 3T.
 
-O script da questão 5 sobre MongoDB se encontra no extensão / formato `.js` pois foi nessa extensão que o Studio 3T salvou o arquivo.
+O script da questão 5 sobre MongoDB se encontra na extensão / formato `.js` pois foi nessa extensão que o Studio 3T salvou o arquivo, mas basicamente dentro dele se encontra o passo a passo para criar a nossa database, nossa collection e nosso document com os campos e objetos que foram solicitados.
