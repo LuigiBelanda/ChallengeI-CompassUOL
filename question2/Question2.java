@@ -2,10 +2,10 @@ package question2;
 
 import java.util.Scanner;
 
-public class question2 {
+public class Question2 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         System.out.println("\n####### QUESTION 2 #######");
 
@@ -15,7 +15,7 @@ public class question2 {
             System.out.println("\n\nDigite a mensagem para saber o sentimento que ela expressa:");
             System.out.println("Utilize os caracteres :-) ou :-( para sabermos seus sentimentos");
             System.out.print("\nSua mensagem: ");
-            message = scanner.nextLine();
+            message = scan.nextLine();
 
             message = sanitizeString(message);
 
@@ -28,7 +28,7 @@ public class question2 {
         
         showSentiment(message);
 
-        scanner.close();
+        scan.close();
     }
 
     /**
